@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.IncorrectHeader" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-17T08:14:39" hostname="DELL" time="0.63">
+  <properties/>
+  <testcase name="givenWrong_Header_Census_CSV_File_Should_Return_Exception" classname="com.bridgelabz.IncorrectHeader" time="0.63"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
