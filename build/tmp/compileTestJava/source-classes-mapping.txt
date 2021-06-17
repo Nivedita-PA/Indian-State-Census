@@ -2,3 +2,5 @@ com/bridgelabz/IndianStateCensusAnalyserTest2.java
  com.bridgelabz.IndianStateCensusAnalyserTest2
 com/bridgelabz/IndianStateCensusAnalyserTest.java
  com.bridgelabz.IndianStateCensusAnalyserTest
+com/bridgelabz/IncorrectFileTypeTest.java
+ com.bridgelabz.IncorrectFileTypeTest

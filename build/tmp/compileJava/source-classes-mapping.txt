@@ -1,7 +1,11 @@
 com/bridgelabz/IndianCensusCsv.java
  com.bridgelabz.IndianCensusCsv
+com/bridgelabz/IndianStateCensus2.java
+ com.bridgelabz.IndianStateCensus2
 com/bridgelabz/CensusAnalyserException.java
  com.bridgelabz.CensusAnalyserException
  com.bridgelabz.CensusAnalyserException$ExceptionType
+com/bridgelabz/IndianStateCensus3.java
+ com.bridgelabz.IndianStateCensus3
 com/bridgelabz/IndianStateCensus.java
  com.bridgelabz.IndianStateCensus

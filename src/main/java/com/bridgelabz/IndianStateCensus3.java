@@ -10,13 +10,10 @@ import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.stream.StreamSupport;
 
-public class IndianStateCensus {
+public class IndianStateCensus3 {
+    public int loadCensusData3(String FILE_PATH) throws CensusAnalyserException {
 
-
-    public int loadCensusData(String FILE_PATH) throws CensusAnalyserException {
-
-        try {
-            Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH));
+        try (Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH));) {
             CsvToBean<IndianCensusCsv> csvToBean = new CsvToBeanBuilder(reader).withType(IndianCensusCsv.class)
                     .withIgnoreLeadingWhiteSpace(true).build();
             Iterator<IndianCensusCsv> censusCsvIterator = csvToBean.iterator();
@@ -24,8 +21,8 @@ public class IndianStateCensus {
             Iterable<IndianCensusCsv> censusCsvIterable = () -> censusCsvIterator;
             numOfEntries = (int) StreamSupport.stream(censusCsvIterable.spliterator(), false).count();
             return numOfEntries;
-           }catch (IllegalStateException | IOException ex) {
-            throw new CensusAnalyserException(ex.getMessage(), CensusAnalyserException.ExceptionType.FILE_TYPE_NULL);
+        }catch (IllegalStateException | IOException ex) {
+            throw new CensusAnalyserException(ex.getMessage(), CensusAnalyserException.ExceptionType.FILE_TYPE_PROBLEM);
         }
 
     }

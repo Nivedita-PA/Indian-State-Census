@@ -9,9 +9,13 @@ public class IndianStateCensusAnalyserTest {
 
     @Test
     public void givenIndianCensus_CSV_File_Should_Return_Correct_Record() throws CensusAnalyserException {
-        IndianStateCensus indianStateCensus = new IndianStateCensus();
-        int numOfRecs = indianStateCensus.loadCensusData(FILE_PATH_INDIAN_STATE);
-        Assert.assertEquals(29,numOfRecs);
+        IndianStateCensus2 indianStateCensus = new IndianStateCensus2();
+        try {
+            int numOfRecs = indianStateCensus.loadCensusData2(FILE_PATH_INDIAN_STATE);
+            Assert.assertEquals(29, numOfRecs);
+        }catch (CensusAnalyserException e){
+            e.printStackTrace();
+        }
     }
 
 }
