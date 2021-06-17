@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.IncorrectFileTypeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-17T07:21:51" hostname="DELL" time="0.808">
-  <properties/>
-  <testcase name="givenCensusCSV_File_WithWrong_Extention_Returns_Correct_Recs" classname="com.bridgelabz.IncorrectFileTypeTest" time="0.808"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

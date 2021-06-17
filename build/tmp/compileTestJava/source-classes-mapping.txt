@@ -4,3 +4,5 @@ com/bridgelabz/IndianStateCensusAnalyserTest.java
  com.bridgelabz.IndianStateCensusAnalyserTest
 com/bridgelabz/IncorrectFileTypeTest.java
  com.bridgelabz.IncorrectFileTypeTest
+com/bridgelabz/IncorrectDelimiterTest.java
+ com.bridgelabz.IncorrectDelimiterTest
