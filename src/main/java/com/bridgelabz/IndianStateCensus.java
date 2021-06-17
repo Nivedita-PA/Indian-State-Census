@@ -8,26 +8,25 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Iterator;
+import java.util.stream.StreamSupport;
 
 public class IndianStateCensus {
 
-    private static final String FILE_PATH_INDIAN_STATE = "./src/test/resources/IndiaStateCensusData.csv";
 
-    public int loadCensusData(String FILE_PATH_INDIAN_STATE) throws CensusAnalyserException {
+    public int loadCensusData(String FILE_PATH) throws CensusAnalyserException {
 
         try {
-            Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH_INDIAN_STATE));
+            Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH));
             CsvToBean<IndianCensusCsv> csvToBean = new CsvToBeanBuilder(reader).withType(IndianCensusCsv.class)
                     .withIgnoreLeadingWhiteSpace(true).build();
             Iterator<IndianCensusCsv> censusCsvIterator = csvToBean.iterator();
             int numOfEntries = 0;
-            while (censusCsvIterator.hasNext()) {
-                numOfEntries++;
-                IndianCensusCsv censusCsv = censusCsvIterator.next();
-            }
+            Iterable<IndianCensusCsv> censusCsvIterable = () -> censusCsvIterator;
+            numOfEntries = (int) StreamSupport.stream(censusCsvIterable.spliterator(), false).count();
             return numOfEntries;
-        } catch (IOException e) {
-            throw new CensusAnalyserException(e.getMessage(), CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
+        }catch (IllegalStateException | IOException ex) {
+            throw new CensusAnalyserException(ex.getMessage(), CensusAnalyserException.ExceptionType.FILE_TYPE_NULL);
         }
+
     }
 }

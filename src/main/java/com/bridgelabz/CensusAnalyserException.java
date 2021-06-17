@@ -4,13 +4,14 @@ public class CensusAnalyserException extends Throwable {
 
 
     enum ExceptionType{
-        CENSUS_FILE_PROBLEM,NULL_TYPE_FILE
+        CENSUS_FILE_PROBLEM, FILE_TYPE_NULL;
     }
 
     ExceptionType type;
-    String message;
+
     public CensusAnalyserException(String message, ExceptionType type) {
         super(message);
-        this.message = "INVALID_FILE";
+        this.type = type;
     }
+
 }
